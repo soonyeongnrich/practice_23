@@ -1,0 +1,162 @@
+@charset "utf-8";
+@font-face {
+    font-family: 'EF_jejudoldam';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2210-EF@1.0/EF_jejudoldam.woff2') format('woff2');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'NanumSquareNeo-Variable';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_11-01@1.0/NanumSquareNeo-Variable.woff2') format('woff2');
+    font-weight: normal;
+    font-style: normal;
+}
+* {margin: 0; padding: 0;}
+a {
+    text-decoration: none; 
+    color: inherit;
+}
+li {list-style: none;}
+body {
+    color: #333;
+    font-family: 'Noto Serif', serif;
+}
+
+/* .xi-bars 없애기 */
+.xi-bars span {
+    position: absolute;
+    left: -99999999999999999px;
+}
+.xi-bars {display: none;}
+
+/* header */
+header {
+    height: 100px;
+    background-color: #ffffffb0;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    backdrop-filter: blur(3px);
+    z-index: 1;
+}
+header .inner h1 a img {
+    height: 30px;
+} 
+header .inner {
+    display: flex;
+    justify-content: space-between;
+    align-items: center; /* 높이의 가운데로 배치 ⭐⭐⭐⭐ */
+    height: 100%;
+    max-width: 1440px;
+    width: 95%;
+    margin: 0 auto;
+}
+header .inner nav ul li{
+    display: inline-block;
+    margin-left: 25px;
+}
+ /* main_visual */
+ .main_visual {
+    height: 100vh; /* vh⭐⭐⭐ */
+    position: relative;
+ }
+ .main_visual img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 90%;
+ }
+    
+ .main_visual div h2{
+    font-size: 80px;
+    font-weight: lighter;
+}
+.main_visual div p{
+    font-size: 20px;
+    font-weight: lighter;
+}
+
+ /* .cont01 */
+
+ .cont01 {
+    margin: 50px 0;
+ }
+ .cont01 .list .item {
+    display: flex;
+    /* justify-content: space-between; */
+    height: 70vh;
+    align-items: center; /* 텍스트 수직중앙정렬 */
+ }
+ .cont01 .list .item figure {
+    width: 50%;
+    height: 100%;
+ }
+ .cont01 .list .item figure img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+ }
+ .cont01 .list .item div {
+    width: 50%;
+    padding: 0 100px;
+    box-sizing: border-box;
+ }
+ .cont01 .list .item div h4 {
+    font-size: 50px;
+    line-height: 2;
+    word-break: keep-all; /* 단어로 줄바꿈 */
+ }
+ .cont01 .list .item div p {
+    margin: 10px 0 50px;
+    font-family: 'NanumSquareNeo-Variable';
+    font-size: 20px;
+ }
+ .cont01 .list .item div a {
+    text-align: right;
+    display: block;
+    
+ }
+ .cont01 .list .item:nth-child(2) div{
+    order: -1; /* 앞뒤배치변경 직계부모에게 플렉스가 있을때만 사용가능 */
+ }
+
+
+
+/* 반응형 */
+
+ @media all and (max-width:1024px) {
+    header .inner nav {display: none;}
+    .xi-bars {
+        display: block;
+        font-size: 40px;
+    }
+    .cont01 .list .item div {
+        padding: 0 20px;
+    }
+    .cont01 .list .item div h4 {
+        font-size: 30px;
+    }
+    .cont01 .list .item div p {
+        font-size: 15px;
+    }
+ }
+
+ @media all and (max-width:800px) {
+    header {height: 70px;}
+    .cont01 .list .item {
+        height: auto;
+        display: block;
+    }
+    .cont01 .list .item figure {
+        width: 100%;
+        height: 40vh;
+    }
+    .cont01 .list .item div {
+        width: 100%;
+        margin: 10px 0 25px;
+    }
+    .cont01 .list .item div h4 {
+        font-size: 25px;
+    }
+ }
